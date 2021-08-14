@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    font-family: Arial, Helvetica, sans-serif ;
+    background-image: url(img/lamp-2381617_1920.jpg);
+   min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+   } 
+ header ul{
+     display: flex;
+    list-style: none;
+   flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100vh;   
+    background-color: rgba(0, 0, 0, 0.6); 
+    }
+    header ul li{
+   border-top: 2px solid gray;
+      flex-basis: 100%;
+    }
+    header li a{
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        text-align: center;
+        line-height: 150px;
+        display: block;
+        font-size:26px;
+        font-weight:bold;
+      
+    }
+    
+    header h3{
+       display: none;
+    }
+    header p{
+      display: none;}
+
+  section.opis{
+      background-image: url(img/ist1.jpg);
+      background-position: center;
+      background-size: cover;
+height: 100vh;
+top: 0;
+position: relative;
+   }
+   .opis img{
+       height: 100%;
+       position: absolute;
+       left: -60%;
+   }
+  .opis div{
+    
+     
+    }
+    .opis h1{
+        
+        font-size: 30px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: rgba(0,0,0,0.8);
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    }
+    .opis p{
+        position: absolute;
+        top: 55%;
+        left: 10%;
+        padding: 10px;
+        font-size: 16px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: rgba(0,0,0,0.7);
+        text-align: left;
+        padding-bottom: 20px;
+    }
+    @media (min-height:768px){
+        header li a{
+          font-size: 40px; 
+          line-height: 200px ; 
+
+        }
+     
+}
+
+    @media (orientation: landscape) {
+        header{
+            position: relative;
+        }
+        header ul{
+    background-color: transparent;
+          flex-direction: row;
+          height: 20vh;
+          position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        header ul li{
+            border-right: 2px solid gray;
+            background-color: rgba(0, 0, 0, 0.6); 
+            
+            
+        }
+      header li a{
+          font-size: 16px;
+            line-height: 90px;
+           
+      }
+      
+       
+    .opis p{
+        font-size: 24px;}
+    .opis div{
+        text-align: center;
+    }}
+    section.features{
+        display: flex;
+        min-height: 100%;
+        flex-direction: row;
+       
+       background-color: rosybrown;
+       
+    }
+    .features img{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+    box-shadow: 10px 5px 5px black;
+}
+       
+        .features>div{
+            text-align: center;
+            padding: 10px;
+            flex-basis: 100%;
+           
+        }
+    .features .about{
+        padding: 10px 20px;
+        border: 2px solid white;
+        margin-top: 10px;
+    }
+ .features p {
+     color: rgba(0, 0, 0, 0.6);
+ }
+ @media (min-height:768px){
+    .features img{
+        height: 400px;
+        width: 400px;}
+        .features p {
+            font-size: 24px;
+        }
+        section.features{
+           
+            height:180vh;
+ }
+ }
+ section.moto{
+    height: 100vh;
+    background-image: url(img/ship-6403827_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+section.moto h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%;-50%);
+    font-size: 36px
+}
