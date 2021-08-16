@@ -18,3 +18,27 @@ function changeImg(){
     
 }
 setInterval(changeImg, 4000)
+
+const spnText = document.querySelector('span.txt');
+const txt = '"Gdyby cały świat był jednym państwem, to Stambuł byłby jego stolicą"'
+const autor = document.querySelector('span.autor')
+const txtAutor= 'Napoleon Bonaparte'
+let number = 0;
+let numberAutor = 0;
+function addLetter(){
+    spnText.textContent += txt[number];
+    
+    number++;
+    if(number === txt.length){
+        clearInterval(index)
+    }
+}
+function addTwo(){
+    autor.textContent += txtAutor[number];
+    numberAutor++;
+    if(numberAutor===txtAutor.length){
+        clearInterval(indexAutor)
+    }
+}
+const indexAutor = setInterval(addTwo,50)
+const index = setInterval(addLetter, 50);

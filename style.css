@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 header {
     font-family: Arial, Helvetica, sans-serif ;
     background-image: url(img/lamp-2381617_1920.jpg);
@@ -25,6 +30,7 @@ header {
     }
     header li a{
         color: rgba(255, 255, 255, 0.7);
+        text-shadow: 0 0 4px black;
         text-decoration: none;
         text-align: center;
         line-height: 150px;
@@ -87,12 +93,36 @@ position: relative;
           line-height: 200px ; 
 
         }
+        .opis p{
+            font-size: 28px;;
+        }
+        .opis h1{
+            font-size: 32px;
+        }
      
 }
 
-    @media (orientation: landscape) {
+    @media (orientation: landscape) and (min-width:740px) {
         header{
             position: relative;
+        }
+        header h3{
+            display: block;
+            position: absolute;
+            top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    font-size: 24px;
+        }
+        header p{
+            display: block;
+            position: absolute;
+            top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    font-size: 24px;
         }
         header ul{
     background-color: transparent;
@@ -102,6 +132,8 @@ position: relative;
             top: 0;
             left: 0;
             right: 0;
+            z-index: 300;
+            align-items: center;
         }
         header ul li{
             border-right: 2px solid gray;
@@ -121,11 +153,10 @@ position: relative;
     .opis div{
         text-align: center;
     }}
+
     section.features{
         display: flex;
-        min-height: 100%;
-        flex-direction: row;
-       
+        flex-direction:column;
        background-color: rosybrown;
        
     }
@@ -157,22 +188,231 @@ position: relative;
         .features p {
             font-size: 24px;
         }
+     
         section.features{
-           
-            height:180vh;
- }
- }
+            display: flex;
+            
+            flex-direction:column;
+ 
+ }}
  section.moto{
     height: 100vh;
     background-image: url(img/ship-6403827_1280.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
+    letter-spacing: 1px;
 }
-section.moto h3{
+section.moto span.txt{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%;-50%);
-    font-size: 36px
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 4px black;
+    padding: 10px 20px;
+    text-align: center;
+}
+section.moto span.autor{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) ;
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 4px black;
+}
+@media (min-height:768px){
+    section.moto span.txt{
+        font-size: 36px;
+    }
+    section.moto span.autor{
+        font-size: 32px;
+    }}
+
+    @media (orientation: landscape) {
+        section.moto span.txt{
+            font-size: 28px;
+        }
+        section.moto span.autor{
+            font-size: 24px;
+            top: 65%;
+        }}
+        @media (orientation: landscape) and (min-width:1024px) {
+            header ul{
+                top:0;
+                left:0;
+                right: 0;
+                height: 10vh;}
+                section.features{
+                   min-height: 60vh;
+flex-direction: row;
+align-items: center;
+
+                }
+                section.features img{ 
+                    width: 200px;    
+                    height: 200px;      
+                }}
+                @media (orientation: landscape) and (min-width:740px) {
+                    section.features{
+                   
+                        flex-direction: row;
+                        
+                                        }
+                    section.features p{
+                        font-size: 16px;
+                    }
+                    .features .about{
+                        padding: 0;
+                        border: 2px solid white;
+                        margin-top: 0;
+                    }}
+  .cities .city{
+      height: 25vh;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+  }      
+  .cities .city:nth-last-of-type(1) {
+      background-image: url(img/aya.jpg);
+  }     
+  .cities .city:nth-last-of-type(2) {
+    background-image: url(img/capp.jpg);
+  }    
+  .cities .city:nth-last-of-type(3) {
+    background-image: url(img/izmir.jpg);
+  }    
+  .cities .city:nth-last-of-type(4) {
+    background-image: url(img/antalya.jpg);
+  }    
+  .cities .city p{
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      line-height: 25vh;
+      text-shadow: 0 0 4px black;
+      background-color: rgba(0, 0, 0, 0.5);}
+
+      .cities h3{
+          padding: 10px 20px;
+          font-size: 35px;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.3);
+      }
+      @media (min-width:740px) {
+        .cities .city{
+            float:left;
+            width: 50%;
+            height: 40vh;
+        }
+        .cities .city p{
+            line-height: 40vh;
+      }}
+      section.footer{
+        background-color: black;
+      }
+      section.footer h3{
+        text-align: center;
+        padding: 20px;
+        color: white;
+        font-size: 24px;
+     }
+      section.footer input.name{
+          height: 20px;
+          width: 80%;
+         margin:  20px 30px;
+      }
+      section.footer input.surname{
+        height: 20px;
+        width: 80%;
+        margin: 0 30px 20px 30px;
+        
+    }
+    section.footer input.message{
+        height: 100px;
+        width: 80%;
+        margin:  0 30px;
+
+    }
+    section.footer .input{
+        text-align: center;
+        
+    }
+
+section.footer button{
+    display: block;
+    height: 30px;
+    width: 150px;
+    margin: 5px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+    padding: 5 px 10px;
+    color: white;
+}
+section.footer .contact {
+    padding: 10px 50px;
+    font-size: 24px;
+    color: white;
+    
+}
+section.footer .contact span{
+    padding: 10px;
+}
+section.footer .flex {
+    margin: 0 auto;
+}
+
+@media (min-width:740px) {
+ section.footer .flex{
+     display: flex;
+ }
+ section.footer .flex div{
+     flex-basis: 100%;
+ }}
+ @media screen {
+     header a:hover{
+font-size: 32px;
+     }
+     header h3{
+         font-size: 32px;
+     }
+     header p{
+         font-size: 28px;
+     }
+     section.features{
+         flex-direction: column;
+         min-height: 80vh;
+         background-color: rgba(0, 0, 0, 0.9);
+     }
+
+ section.features .feature{
+     display: flex;}
+     section.features .feature div{
+         flex-basis: 100%;
+     }
+
+     section.features img{
+         height: 350px;
+         width: 350px;}
+         section.features .about{
+             padding: 10px 20px;
+             margin: 0 40px;
+             font-size: 32px;}
+             section.features .about p{
+                 font-size: 28px;
+                 padding: 10px 20px;
+                 color: white;
+             }
+             section.features .about h1{
+                 color: white;
+                 text-shadow: 0 0 black rgba(0, 0, 0, 0.3);
+             }
+             section.footer .flex{
+                 margin: 0 200px;
+             }           
+.cities .city :hover{
+        font-size: 32px;    
 }
